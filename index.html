@@ -26,10 +26,12 @@
         <div class="right-side">
             <div class="text-right calendar-change-year">
                 <div class="calendar-change-year-slider">
-                    <span class="todayBtn">today</span>
-                    <span class="fa fa-caret-left cursor-pointer calendar-change-year-slider-prev"></span>
-                    <span class="calendar-current-year"></span>
-                    <span class="fa fa-caret-right cursor-pointer calendar-change-year-slider-next"></span>
+                    <span class="todayBtn">Today date</span>
+                    <div class="yearWrapper">
+                        <span class="fa fa-caret-left cursor-pointer calendar-change-year-slider-prev"></span>
+                        <span class="calendar-current-year"></span>
+                        <span class="fa fa-caret-right cursor-pointer calendar-change-year-slider-next"></span>
+                    </div>
                 </div>
             </div>
             <div class="calendar-month-list">
@@ -50,9 +52,11 @@
                 <div class="modal-content">
                         <div class="add-event-day">
                             <input type="text" class="add-event-day-field" placeholder="Add an event">
-                            <span class="fa fa-plus-circle add-event-day-field-btn cursor-pointer"></span>
                         </div>
-                        <span class="close">&times;</span>
+                            <div class="buttons">
+                                <button class="close">Close</button>
+                                <button class="add-event-day-field-btn cursor-pointer">Add</button>
+                            </div>
                 </div>
         </div>    
     </div>

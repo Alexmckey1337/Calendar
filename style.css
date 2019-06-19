@@ -33,7 +33,14 @@
     /* Disable Android and iOS callouts*/ }
   .add-event-day{
     height: 300px;
-    background-color: black
+
+  }
+  .add-event-day-field {
+    background-color: #ccc;
+    color:black;
+  }
+  .add-event-day-field-btn{
+    color: black;
   }
   .calendar, .calendar .add-event-day .add-event-day-field-btn, .calendar .calendar-days li:after {
     position: absolute;
@@ -51,7 +58,7 @@
     overflow: hidden; }
     .calendar .calendar-left-side-day-of-week, .calendar .current-day-events ul, .calendar .add-event-day, .calendar .calendar-change-year, .calendar .calendar-days li {
       position: relative; }
-    .calendar .calendar-left-side-day, .calendar .calendar-left-side-day-of-week, .calendar .current-day-events, .calendar .add-event-day-field-btn, .calendar .add-event-day-field {
+    .calendar .calendar-left-side-day, .calendar .calendar-left-side-day-of-week, .calendar .current-day-events, .calendar , .calendar {
       color: white; }
     .calendar .calendar-left-side-day-of-week, .calendar .calendar-week {
       text-transform: uppercase; }
@@ -96,6 +103,10 @@
       float: right; }
     .calendar .calendar-change-year {
       font-size: 20px; }
+      .calendar-change-year-slider{
+        display: flex;
+        justify-content: space-between;
+      }
       .calendar .calendar-change-year .calendar-change-year-slider {
         margin: 15px 0;
         color: #737373; }
@@ -170,18 +181,37 @@
           background-color: rgba(0,0,0,0.4); 
         }
         .modal-content {
+          border-radius: 10px;
+          display: flex;
+          flex-direction: column;
           background-color: #fefefe;
           margin: auto;
           padding: 20px;
           border: 1px solid #888;
-          height: 50%;
-          width: 80%;
-        }   
+          height: 40%;
+          width: 40%;
+        } 
+        .todayBtn{
+          color: #ec364f;
+          cursor: pointer;
+        }
+        .buttons{
+          padding-top: 15px;
+          display: flex;
+          justify-content: space-between
+        }
+
+        .buttons > *{
+          width: 150px;
+          height: 36px;
+          font-size: 20px;
+          background-color: #f5b4bd;
+          border: none;
+          border-radius: 10px;
+        }
         .close {
-          color: #aaaaaa;
+          color: black;
           float: right;
-          font-size: 28px;
-          font-weight: bold;
         }
         
         .close:hover,

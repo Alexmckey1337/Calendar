@@ -37,7 +37,7 @@ class calendar {
 
     drawEvents(){
         let calendar = this.getCalendar()
-        let eventList =this.eventList[calendar.active.formatted] || ['There is not any events']
+        let eventList =this.eventList[calendar.active.formatted] || ['There are not any events']
         let eventTemplate = ''
         eventList.forEach(item=>{
             eventTemplate += `<li>${item}</li>`
