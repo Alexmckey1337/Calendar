@@ -14,7 +14,7 @@ class calendar {
             currentDay:this.getFirstElementInsideIdByClass('calendar-left-side-day'),
             currentWeekDay:this.getFirstElementInsideIdByClass('calendar-left-side-day-of-week'),
             prevYear:this.getFirstElementInsideIdByClass('calendar-change-year-slider-prev'),
-            nextYear:this.getFirstElementInsideIdByClass('calendar-change-year-slider-next')
+            nextYear:this.getFirstElementInsideIdByClass('calendar-change-year-slider-next'),
         }
         this.eventList = JSON.parse(localStorage.getItem(localStorageName)) || {}
         this.date =+ new Date()
@@ -145,16 +145,34 @@ class calendar {
             this.updateTime(newMonth);
             this.drawAll()
         })
+        document.getElementsByClassName('todayBtn')[0].addEventListener('click',e=>{
+           let date = new Date()
+           let day = date.getDate()
+           let month = date.getMonth()
+           let year= date.getFullYear()
+           this.updateTime(`${Number(month)+1}/${day}/${year}`)
+           this.drawAll()
+        })
         this.elements.days.addEventListener('click',e=>{
             let element = e.srcElement;
             let day = element.getAttribute('data-day')
             let month = element.getAttribute('data-month')
             let year = element.getAttribute('data-year')
+            let modal = document.getElementById('modal')
             if(!day) return false
             let strDate = `${Number(month)+1}/${day}/${year}`
             this.updateTime(strDate);
             this.drawAll()
-            console.log('click')
+            console.log(strDate)
+            modal.style.display = 'block'
+        })
+        document.getElementsByClassName('close')[0].addEventListener('click',e=>{
+            modal.style.display = 'none'
+        })
+        window.addEventListener('click',e=>{
+            if (e.target == modal){
+                modal.style.display = 'none'
+            }
         })
         this.elements.eventAddBtn.addEventListener('click',e=>{
             let fieldValue = this.elements.eventField.value
@@ -164,6 +182,7 @@ class calendar {
             this.eventList[dateFormatted].push(fieldValue)
             localStorage.setItem(localStorageName,JSON.stringify(this.eventList))
             this.elements.eventField.value = ''
+            modal.style.display = 'none'
             this.drawAll()
         })
     }
