@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/fb7b0857e5.js"></script>
+    <title>Calendar</title>
 </head>
 <body>
-    
+    <div class="calendar disable-selection" id="calendar">
+        <div class="left-pane">
+            <div class="current-day text-center">
+                <h1 class="calendar-left-side-day"></h1>
+                <div class="calendar-left-side-day-of-week"></div>
+            </div>
+            <div class="current-day-events">
+                <p>Current Events:</p>
+                <ul class="current-day-events-list">
+                   <li>Some Event</li>     
+                </ul>
+            </div>
+            <div class="add-event-day">
+                <input type="text" class="add-event-day-field" placeholder="Add an event">
+                <span class="fa fa-plus-circle add-event-day-field-btn cursor-pointer"></span>
+            </div>
+        </div>
+        <div class="right-pane"></div>
+    </div>
 </body>
 </html>
